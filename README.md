@@ -31,13 +31,18 @@ note **per file**. Where the redistribution terms are not established the note s
 before making this repository public. Most npz files also carry their own provenance keys
 (`provenance`, `git_rev`, `readme`, `arepo_commit`, ...).
 
-Files are stored byte-identical to the originals (copied from LUNA `tests/data/` at 2763e7f and from
-`/ptmp/uli/jax-hydro/luna_tests/wd_research/` on Raven, 2026-10-30).
+Data files are byte-identical to the originals (copied from LUNA `tests/data/` at 2763e7f, from
+`/ptmp/uli/jax-hydro/luna_tests/wd_research/`, `phase0/` and `a15_ext/lit/` on Raven, 2026-10-30); only
+`athenak/README.md` had its `tests/data/...` paths rewritten to this layout.
 
 ## Changing a file
 
 Add or replace the file, extend the matching rule in `make_manifest.sh` (an unmatched file stops the script),
 run `bash make_manifest.sh`, commit both. A LUNA test then fails on the sha256 until the manifest is committed.
+
+## Gaps
+
+`GAPS.md`: per validation problem, which reference exists (exact, external, literature, LUNA-self, none) and what is missing to gate it against an independent code.
 
 ## Not here
 

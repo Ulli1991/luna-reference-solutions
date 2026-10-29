@@ -23,6 +23,7 @@ meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licen
     athenak/jeans_wave/*) echo "athenak|$AK_VER_MG|$AK_HOW|jeans_wave (A7)|$AK_TOOLS|$AK_LIC";;
     athenak/evrard/*) echo "athenak|$AK_VER_MG|$AK_HOW|evrard (A8)|tools/site_data.py;$AK_TOOLS|$AK_LIC";;
     athenak/richtmyer_meshkov/*) echo "athenak|$AK_VER|$AK_HOW|richtmyer_meshkov (A14)|tests/test_hydro_hard_richtmyer_meshkov.py;tools/site_data.py;$AK_TOOLS|$AK_LIC";;
+    athenak/taylor_green/tg_ppmx_rk4_reeff.npz) echo "athenak|AthenaK c52f88f0 (binary build_gpu_lunaic), LUNA 61c23351; npz key provenance|LUNA tools/athenak_refs.py reduce tg, SLURM 31083046 (luna_tests/phase0/report.md): Re_eff, D per N|taylor_green (A15 Re_eff)|none (tabulated in docs/TEST_PLAN.md)|$AK_LIC";;
     athenak/taylor_green/*) echo "athenak|$AK_VER|$AK_HOW|taylor_green (A15)|tools/site_data.py;$AK_TOOLS|$AK_LIC";;
     athenak/mcnally_kh/*)
       echo "athenak|$AK_VER|$AK_HOW|$(dirname "${p#athenak/}")|tools/site_data.py;$AK_TOOLS|$AK_LIC";;
@@ -41,6 +42,7 @@ meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licen
     pencil/mcnally_kh/*) echo "pencil|McNally, Lyra & Passy 2012, ApJS 201, 18 (arXiv:1111.1764v2), Pencil Code 4096^2 reference curves; source PDF sha256 in the file header|LUNA tools/mcnally_digitize.py: digitised from the arXiv figure PDF content stream|mcnally_kh (A5)|tests/test_hydro_hard_mcnally_kh.py;tools/site_data.py;tools/mcnally_digitize.py|unknown: digitised from a published figure; cite McNally et al. 2012";;
     spectral/taylor_green/*) echo "spectral|euler3d (github.com/Ulli1991/euler_3d b104c2b); provenance string in npz key 'provenance'|LUNA tools/tg_spectral_reference.py (SLURM 31078606, A100, FP64) packed by tools/tg_reference_pack.py|taylor_green inviscid (A15)|tests/test_hydro_hard_taylor_green.py;tests/test_hydro_hard_taylor_green_reynolds.py;tools/tg_reference_pack.py|unknown: the LUNA author's own code (euler_3d), licence of that repository not stated";;
     spectral/taylor_green_viscous/*) echo "spectral|euler3d (euler_3d branch viscosity 3940684); provenance string in npz key 'provenance'|LUNA tools/tg_viscous_reference.py run + pack, Re 25..1600 at 128^3|taylor_green_viscous (A15 Re_eff)|tests/test_hydro_hard_taylor_green_reynolds.py;tools/site_data.py;tools/athenak_refs.py;tools/tg_viscous_reference.py|unknown: the LUNA author's own code (euler_3d), licence of that repository not stated";;
+    spectral/taylor_green_brachet1983/*) echo "spectral|Brachet et al. 1983, J. Fluid Mech. 130, 411, fig. 7 (spectral DNS dissipation rate, Re 800/1600/3000)|digitised from the paper figure (luna_tests/a15_ext/lit/digit2.py, fig7.png); plain text, peak eps and eps(t) rows|taylor_green_viscous (A15, external literature check)|none (A15 external check, luna_tests/a15_ext)|unknown: digitised from a published figure; cite Brachet et al. 1983";;
     luna/kt_riemann/*) echo "luna|LUNA 2dbf3d3b (npz key 'provenance': run line, SLURM 31109275, 4 A100)|LUNA tools/kt_riemann.py, MC + HLLC 8192^2, block averages|kt_riemann (A11) - regression only, not external|tests/test_hydro_hard_kt_riemann.py;tools/kt_riemann.py;tools/athenak_summary.py|$LUNA_LIC";;
     luna/lw_implosion/*) echo "luna|LUNA 06f5d98a (npz keys git_rev, slurm_job_id 31110659, date)|LUNA tools/implosion_reference.py, MC + HLLC 6400^2|lw_implosion (A10) - regression only, not external|tests/test_hydro_hard_implosion.py;tools/implosion_reference.py;tools/athenak_summary.py|$LUNA_LIC";;
     luna/mcnally_kh/*) echo "luna|LUNA ea8fe29 (npz keys git_rev, date, mesh, devices)|LUNA tools/mcnally_kh_reference.py, MC + HLLC 4096^2|mcnally_kh (A5) - regression only, not external|tests/test_hydro_hard_mcnally_kh.py;tools/mcnally_kh_reference.py|$LUNA_LIC";;
@@ -54,7 +56,7 @@ meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licen
 
 json_list() { local IFS=';' first=1 x; printf '['; for x in $1; do [ $first = 1 ] || printf ', '; printf '"%s"' "$x"; first=0; done; printf ']'; }
 
-files=$(find . -type f ! -path './.git/*' ! -name MANIFEST.json ! -name make_manifest.sh ! -path ./README.md | sed 's|^\./||' | LC_ALL=C sort)
+files=$(find . -type f ! -path './.git/*' ! -name MANIFEST.json ! -name make_manifest.sh ! -path ./README.md ! -path ./GAPS.md | sed 's|^\./||' | LC_ALL=C sort)
 {
   printf '{\n "schema": 1,\n "generator": "make_manifest.sh",\n "files": [\n'
   n=0
