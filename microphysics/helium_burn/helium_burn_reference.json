@@ -1,0 +1,54 @@
+{
+  "source": "AMReX-Astro/Microphysics@99b9b47cdb6d0d459deefeacdd4d78639bbd5f93",
+  "source_path": "unit_test/burn_cell/ci-benchmarks/aprox13_Rosenbrock_unit_test.out",
+  "source_sha256": "3b5132723924d837df5d5c6eb35d48747b31321ab48982cb9f8d80d91cad4051",
+  "density": 1000000.0,
+  "initial_temperature": 1000000000.0,
+  "duration": 0.01,
+  "final_temperature": 1516461213.0,
+  "added_energy": 8.559157083e+16,
+  "initial_energy": 1.284393683e+17,
+  "species": [
+    "he4",
+    "c12",
+    "o16",
+    "ne20",
+    "mg24",
+    "si28",
+    "s32",
+    "ar36",
+    "ca40",
+    "ti44",
+    "cr48",
+    "fe52",
+    "ni56"
+  ],
+  "final_mass_fractions": [
+    0.8760688621,
+    0.1064064626,
+    0.0001403261505,
+    8.129222053e-05,
+    0.000297218442,
+    0.01113102526,
+    0.005302198622,
+    0.0005664412981,
+    6.171246879e-06,
+    2.042378765e-09,
+    3.372233427e-14,
+    6.090017275e-17,
+    6.550908082e-23
+  ],
+  "reference_tolerances": {
+    "rtol": 1e-06,
+    "atol": 1e-06
+  },
+  "comparison_tolerances": {
+    "temperature_rtol": 1e-06,
+    "energy_rtol": 1e-06,
+    "abundance_rtol": 1e-05,
+    "abundance_atol": 1e-08
+  },
+  "input_path": "unit_test/burn_cell/inputs_aprox13",
+  "workflow_path": ".github/workflows/burn_cell.yml",
+  "temperature_override": "unit_test.temperature=1.e9"
+}
