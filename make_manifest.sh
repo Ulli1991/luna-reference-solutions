@@ -9,6 +9,7 @@ AK_VER="AthenaK 886dd2a + branch luna_ic (6f269fe4, c0d1427d, c52f88f0), binary 
 AK_VER_MG="AthenaK branch luna_ic_mg 7f1c7989 (upstream c5a0d7f9 + luna_ic), binary build_gpu_lunaic_mg sha256 fd151e3a...97f2 (self-gravity); see athenak/README.md and the npz key 'provenance'"
 AK_HOW="AthenaK runs from LUNA's ICs (pgen luna_ic, LUNA tools/athenak/), reduced with LUNA's test metrics by LUNA tools/athenak_refs.py reduce; Raven A100, FP64, HLLC"
 AK_TOOLS="tools/athenak_refs.py;tools/athenak_summary.py"
+AK_HOW_TUBE="AthenaK runs from LUNA's test ICs (pgen luna_ic; LUNA tools/athenak_refs.py prep so|tt), the tests' N run 2026-10-15 for the site pages (luna_tests/site/ak), the PPMX reference and its half-N run 2026-10-30 (luna_tests/phase_b/ak, SLURM 31699054-31699056); reduced by LUNA tools/athenak_refs.py reduce so|tt (final rho per N, L1/L2 against the PPMX reference and LUNA's MC 2^16); Raven A100, FP64, HLLC, CFL 0.4, dfloor = pfloor = 1e-8"
 LUNA_LIC="LUNA's own output (BSD-3-Clause, as LUNA)"
 MP_VER="AMReX-Astro/Microphysics@99b9b47cdb6d0d459deefeacdd4d78639bbd5f93 (key 'source' in the JSON)"
 MP_HOW="compiled and run outside LUNA from Microphysics sources (LUNA tools/helmholtz_reference.py and the 'source'/'inputs' keys in the JSON)"
@@ -26,7 +27,12 @@ meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licen
     athenak/taylor_green/tg_ppmx_rk4_reeff.npz) echo "athenak|AthenaK c52f88f0 (binary build_gpu_lunaic), LUNA 61c23351; npz key provenance|LUNA tools/athenak_refs.py reduce tg, SLURM 31083046 (luna_tests/phase0/report.md): Re_eff, D per N|taylor_green (A15 Re_eff)|none (tabulated in docs/TEST_PLAN.md)|$AK_LIC";;
     athenak/taylor_green/*) echo "athenak|$AK_VER|$AK_HOW|taylor_green (A15)|tools/site_data.py;$AK_TOOLS|$AK_LIC";;
     athenak/mcnally_kh/*)
-      echo "athenak|$AK_VER|$AK_HOW|$(dirname "${p#athenak/}")|tools/site_data.py;$AK_TOOLS|$AK_LIC";;
+      echo "athenak|$AK_VER|$AK_HOW|$(dirname "${p#athenak/}") (A5)|tests/test_hydro_hard_mcnally_kh.py;tools/site_data.py;$AK_TOOLS|$AK_LIC";;
+    athenak/woodward_colella/*) echo "athenak|$AK_VER|$AK_HOW|woodward_colella (A9)|tests/test_hydro_hard_woodward_colella.py;$AK_TOOLS|$AK_LIC";;
+    athenak/lw_implosion/*) echo "athenak|$AK_VER|$AK_HOW|lw_implosion (A10)|tests/test_hydro_hard_implosion.py;$AK_TOOLS|$AK_LIC";;
+    athenak/kt_riemann/*) echo "athenak|$AK_VER|$AK_HOW|kt_riemann (A11)|tests/test_hydro_hard_kt_riemann.py;$AK_TOOLS|$AK_LIC";;
+    athenak/shu_osher/*) echo "athenak|$AK_VER|$AK_HOW_TUBE|shu_osher|tests/test_hydro_hard_shu_osher.py;tools/athenak_refs.py|$AK_LIC";;
+    athenak/titarev_toro/*) echo "athenak|$AK_VER|$AK_HOW_TUBE|titarev_toro|tests/test_hydro_hard_titarev_toro.py;tools/athenak_refs.py|$AK_LIC";;
     athenak/*) echo "athenak|$AK_VER|$AK_HOW|$(dirname "${p#athenak/}")|$AK_TOOLS|$AK_LIC";;
     arepo/cosmo_a16_xcheck/*) echo "arepo|Arepo public 1fc135a (Raven, Intel 19.1.2, IMPI 2019.8, DOUBLEPRECISION=1); details in npz key 'readme'|LUNA tools/a16_xcheck.py (ICs from LUNA's comoving tests, outputs reduced)|cosmo_a16_xcheck (A16: comoving adiabatic expansion, top-hat)|tests/test_cosmo_a16_xcheck.py;tools/a16_xcheck.py|Arepo is GPL-3.0; data are the LUNA author's own runs; no third-party data terms known";;
     ramses/cosmo_a16_xcheck/*) echo "ramses|mini-ramses 55daaa5 (Raven, gfortran, MPI); details in npz key 'readme'|LUNA tools/a16_xcheck.py (ICs from LUNA's comoving tests, outputs reduced)|cosmo_a16_xcheck (A16)|tests/test_cosmo_a16_xcheck.py;tools/a16_xcheck.py|unknown (mini-ramses licence not checked); data are the LUNA author's own runs";;

@@ -1,4 +1,7 @@
-# Gap analysis: which LUNA validation problem has which reference (2026-10-30)
+# Gap analysis: which LUNA validation problem has which reference (2026-10-30; phase B update the same day)
+
+Phase B (2026-10-30): A5, A9, A10, A11 (config 3), Shu-Osher and Titarev-Toro now gate against AthenaK in LUNA's tests
+(`tests/_athenak.py`); their LUNA-self references remain as labelled regressions.
 
 Kinds: **exact** = analytic/exact solution computed in LUNA's test code; **external** = another code's output stored
 here; **literature** = published numbers/curves; **LUNA-self** = LUNA's own high-resolution or frozen output
@@ -14,13 +17,13 @@ Paths are relative to this repository.
 | A2 | AMR seam pair | exact | none | AthenaK AMR `amr_linwave` run not done |
 | A3 | LW smooth advection | exact | `athenak/lw_smooth_advection/` | nothing (context) |
 | A4 | Gresho static/moving | exact | `athenak/gresho_vortex/` | nothing (context) |
-| A5 | McNally KH | literature (Pencil curves `pencil/mcnally_kh/`) + LUNA-self field (`luna/mcnally_kh/`) | `athenak/mcnally_kh/` incl. PPMX 4096^2 field | the field gate is LUNA-self; switch it to the AthenaK 4096^2 field (exists) |
+| A5 | McNally KH | literature (Pencil curves `pencil/mcnally_kh/`) + **external** field (AthenaK PPMX 4096^2, `athenak/mcnally_kh/a5_ppmx_rk4_4096.npz`; LUNA van Leer within 5 % of AthenaK PLM, 3-4 % above it in V_y); LUNA-self field kept as regression | `athenak/mcnally_kh/` | nothing (an AthenaK PLM run at CFL 0.8 would say whether the V_y gap is LUNA's larger time step) |
 | A6 | isothermal atmosphere | exact | `athenak/isothermal_atmosphere/` | nothing (context) |
 | A7 | Jeans wave | exact | `athenak/jeans_wave/` | nothing (context); CFL-0.4 variant (`luna_tests/a07_a08_ak/cfl04/`) not taken |
 | A8 | Evrard energy | budget (self-consistency) | `athenak/evrard/` | Arepo/Gadget Evrard not run; energy gate is a budget, no external curve gated |
-| A9 | Woodward-Colella / odd-even | LUNA-self (`luna/woodward_colella/`) | `athenak/woodward_colella/` (PLM/PPMX/PPM4 1D 16384) | gate is LUNA-self; AthenaK 16384 exists but is printed, not gated |
-| A10 | LW implosion | LUNA-self (`luna/lw_implosion/`) | `athenak/lw_implosion/` (PPMX 6400^2 no-FMA) | gate is LUNA-self; AthenaK 6400^2 exists, not gated |
-| A11 | Kurganov-Tadmor 3, 6 | LUNA-self (`luna/kt_riemann/`) | `athenak/kt_riemann/` (PPMX 8192^2) | gate is LUNA-self; AthenaK 8192^2 exists, not gated |
+| A9 | Woodward-Colella / odd-even | **external** (AthenaK PPMX 16384, `athenak/woodward_colella/a9_ppmx_rk4_16384.npz`; van Leer vs AthenaK PLM matched); LUNA-self kept as regression | `athenak/woodward_colella/` (PLM/PPMX/PPM4 1D 16384) | AthenaK PLM per-N fields not stored (the matched bound uses a triangle upper bound) |
+| A10 | LW implosion | **external** at t = 0.045 (AthenaK PPMX 6400^2 no-FMA; van Leer vs AthenaK PLM matched); late time (t = 2.5) LUNA-self, regression only | `athenak/lw_implosion/` | no converged late-time reference in either code |
+| A11 | Kurganov-Tadmor 3, 6 | exact 1D wall strips; config 3 outside the core **external** (AthenaK PPMX 8192^2; van Leer vs AthenaK PLM matched); cores and config 6 LUNA-self, regression only | `athenak/kt_riemann/` (PPMX 8192^2) | config 6: AthenaK PPMX rolls the slip lines up (4096 vs 8192 L1 0.044), no external laminar reference; cores do not converge in either code |
 | A12 | Kamm-Timmes Sedov | closed | none | not planned |
 | A13 | Rayleigh-Taylor | exact (linear growth) | `athenak/rayleigh_taylor/` | nothing (context) |
 | A14 | Richtmyer-Meshkov | exact (linear) | `athenak/richtmyer_meshkov/` (printed by the GPU test) | nothing (context) |
@@ -35,8 +38,8 @@ Galilean, low Mach, well-balanced, la14379: **exact** (in LUNA's code); no exter
 
 | problem | gated reference | external reference here | missing |
 |---|---|---|---|
-| Shu-Osher | LUNA-self (`luna/shu_osher/`) | none | no external reference: an AthenaK (site run, `luna_tests/site/ak/so`, raw) reduced 1D reference needed |
-| Titarev-Toro | LUNA-self (`luna/titarev_toro/`) | none | same: `luna_tests/site/ak/tt` raw only, not reduced |
+| Shu-Osher | **external** (AthenaK PPMX 16384, `athenak/shu_osher/`; van Leer vs AthenaK PLM matched); LUNA-self kept as regression | `athenak/shu_osher/` (PPMX 16384 + 8192, PPMX/PLM 256..2048) | nothing |
+| Titarev-Toro | **external** (AthenaK PPMX 65536, `athenak/titarev_toro/`; van Leer vs AthenaK PLM matched); LUNA-self kept as regression | `athenak/titarev_toro/` (PPMX 65536 + 32768, PPMX/PLM 1024..8192) | nothing |
 | Agertz blob / KH / RT mixing | regression only (self-bounded) | none | AthenaK blob runs exist raw (`luna_tests/blob/ak`, 203 GB, `.hst` histories); reduce the cloud-mass histories |
 | site pages (sod, sedov, kh, rm, rt, a10) | - | partly (`athenak/*` for rm, rt, a10, kh) | `luna_tests/site/ak/` (22 GB raw) not reduced |
 

@@ -112,3 +112,20 @@ same commit).
 | `a6_ppmx_rk4_2048.npz` | A6 | same, PPMX + RK4 | same | new; rho L1 2.94e-5 .. 1.15e-7, order 2.0; budget <= 1.9e-9 from 128 |
 | `a6_ppm4_rk4_2048.npz` | A6 | same, PPM4 + RK4 | same | new; rho L1 3.60e-5 .. 1.17e-7, order 2.1 |
 | `a6eqdt_plm_rk2_2048.npz`, `a6eqdt_ppmx_rk4_2048.npz` | A6 | same at CFL 0.8 = LUNA's dt (step counts 161 .. 5121, LUNA's) | same | PLM rho L1 2.07e-8, PPMX 1.15e-7 at 2048 (dt does not matter for AthenaK) |
+
+Shu-Osher and Titarev-Toro (2026-10-30, `tools/athenak_refs.py prep|reduce so|tt`): the tests' own IC
+(`initial_conditions` of `Shu-Osher` / `Titarev-Toro`, [0, 10], zero-gradient ends, T = 1.8 / 5), binary
+`build_gpu_lunaic` (e40b2abd...877b), HLLC, FP64, CFL 0.4, `dfloor = pfloor = 1e-8`, 512-cell MeshBlocks, one A100.
+The runs at the tests' N (PLM + RK2 and PPMX + RK4; SO 256..2048, TT 1024..8192) were made 2026-10-15 for the site
+pages (`luna_tests/site/ak/{so,tt}`, `site/run_ak.sh`, SLURM 31174897/31174898); the PPMX reference and its half-N
+check run 2026-10-30 (`luna_tests/phase_b/ak/{so,tt}/ppmx_rk4_cfl0.4`, which also holds copies of the site runs;
+`phase_b/ak_ref.sh`, SLURM 31699054 SO 8192 + 16384, 31699055 TT 32768, 31699056 TT 65536). Reduced (SLURM 31699122,
+JAX on CPU) with `ATHENAK_DIR=/u/uli/athenak` (source c52f88f0; `athenak_dirty` as above). Each run's job record,
+input and log tail are in `provenance`.
+
+| file | test | content | check |
+|---|---|---|---|
+| `shu_osher/so_ppmx_rk4_16384.npz` | Shu-Osher | `ref_rho` (16384 cells, float64), `ref_L1_self`/`_L2_self` (8192 vs 16384 on 8192 cells), `ref_L1_vs_luna_at8192`/`_at1024` (vs `luna/shu_osher/shu_osher_mc.npz`); per N `N<n>_rho` (final rho), `_L1`, `_L2` (vs `ref_rho`, h-weighted as the test's `errors`), `_L1_luna`, `_L2_luna`, `_ncycle`, `_nonfinite` | self 9.0e-3, vs LUNA 6.3e-3; L1 0.470, 0.217, 0.104, 0.0484 at 256..2048 |
+| `shu_osher/so_plm_rk2_2048.npz` | Shu-Osher | PLM + RK2 per N, the same keys against the PPMX file's `ref_rho` (no `ref_*`) | L1 0.725, 0.482, 0.198, 0.0791 |
+| `titarev_toro/tt_ppmx_rk4_65536.npz` | Titarev-Toro | as SO: `ref_rho` 65536 cells, self 32768 vs 65536 | self 2.17e-3, vs LUNA 2.09e-3; L1 0.425, 0.0782, 0.0445, 0.0171 at 1024..8192 |
+| `titarev_toro/tt_plm_rk2_8192.npz` | Titarev-Toro | PLM + RK2 per N against the PPMX `ref_rho` | L1 0.482, 0.436, 0.244, 0.0748 |
