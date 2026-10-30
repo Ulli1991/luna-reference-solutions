@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "case": "co",
+  "jax": "0.4.38",
+  "scope": "overdriven ZND translation; not a self-sustaining detonation-speed test",
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "reference_sha256": "44e1900d6ff0ca4efcc46740382e9cc1c8c2fca01eecef5897c0f5198301a8dd",
+  "reference_speed": 1478911686.7458632,
+  "half_consumption_length": 0.011848161437172792,
+  "length": 0.4739264574869117,
+  "duration": 3.204562258411252e-11,
+  "runs": [
+    {
+      "cells": 128,
+      "mass_budget_error": 4.912801131392831e-17,
+      "energy_binding_budget_error": 1.6832855649753304e-16,
+      "steps": 111,
+      "retries": 0,
+      "burn_suppressed": 546,
+      "reference_trace_projection": 8.881784197001252e-16,
+      "measured_speed": 1497291472.5875869,
+      "speed_relative_error": 0.012427913043385086,
+      "density_l1_normalized": 0.10333239712585077,
+      "fuel_l1_normalized": 0.034546668634845734,
+      "energy_l1_normalized": 0.05503870733201547
+    },
+    {
+      "cells": 256,
+      "mass_budget_error": 2.9476806788356987e-16,
+      "energy_binding_budget_error": 4.920373189927889e-16,
+      "steps": 222,
+      "retries": 0,
+      "burn_suppressed": 1109,
+      "reference_trace_projection": 9.992007221626409e-16,
+      "measured_speed": 1491162420.5706499,
+      "speed_relative_error": 0.008283614183712817,
+      "density_l1_normalized": 0.057141105593226084,
+      "fuel_l1_normalized": 0.021369367092024114,
+      "energy_l1_normalized": 0.03191950645323283
+    },
+    {
+      "cells": 512,
+      "mass_budget_error": 1.4738403394178493e-16,
+      "energy_binding_budget_error": 5.956241229912708e-16,
+      "steps": 442,
+      "retries": 0,
+      "burn_suppressed": 2228,
+      "reference_trace_projection": 9.992007221626409e-16,
+      "measured_speed": 1473601514.13674,
+      "speed_relative_error": 0.0035905947979947284,
+      "density_l1_normalized": 0.033852992864644396,
+      "fuel_l1_normalized": 0.017146984682286797,
+      "energy_l1_normalized": 0.016925526620202243
+    }
+  ],
+  "comparison_status": "superseded: smooth quadrature crossed the shock; speed/budget measurements retained, profile errors require split-jump integration"
+}

@@ -1,0 +1,109 @@
+{
+  "source": "AMReX-Astro/Microphysics@99b9b47cdb6d0d459deefeacdd4d78639bbd5f93",
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "jax": "0.4.38",
+  "scope": "prescribed pure Ni56 ash and frozen-sonic CJ; not NSE or self-sustaining network eigenvalues",
+  "passed": true,
+  "runs": [
+    {
+      "case": "he",
+      "fuel_density": 1000000.0,
+      "coulomb": false,
+      "ash_density": 1723780.111244433,
+      "ash_temperature": 3649142021.948933,
+      "speed": 1540270941.4875166,
+      "jump_residual": 1.635865512212709e-14,
+      "upstream_relative_error": 4.838998091116764e-10
+    },
+    {
+      "case": "he",
+      "fuel_density": 1000000.0,
+      "coulomb": true,
+      "ash_density": 1723892.7782316464,
+      "ash_temperature": 3651352928.2733054,
+      "speed": 1539930513.353496,
+      "jump_residual": 1.0007874213051165e-14,
+      "upstream_relative_error": 5.23690202314242e-10
+    },
+    {
+      "case": "he",
+      "fuel_density": 10000000.0,
+      "coulomb": false,
+      "ash_density": 16860341.315635033,
+      "ash_temperature": 6283989886.374134,
+      "speed": 1621676322.2320263,
+      "jump_residual": 7.782017331075906e-15,
+      "upstream_relative_error": 7.1301569093407124e-09
+    },
+    {
+      "case": "he",
+      "fuel_density": 10000000.0,
+      "coulomb": true,
+      "ash_density": 16862915.048933703,
+      "ash_temperature": 6293060288.980401,
+      "speed": 1621155958.9451919,
+      "jump_residual": 4.4291188827249235e-15,
+      "upstream_relative_error": 7.577960925431171e-09
+    },
+    {
+      "case": "co",
+      "fuel_density": 1000000.0,
+      "coulomb": false,
+      "ash_density": 1709034.3386243498,
+      "ash_temperature": 3134851740.7308273,
+      "speed": 1158068240.7250903,
+      "jump_residual": 3.7051158300674173e-14,
+      "upstream_relative_error": 6.987371126143671e-09
+    },
+    {
+      "case": "co",
+      "fuel_density": 1000000.0,
+      "coulomb": true,
+      "ash_density": 1709800.5826789504,
+      "ash_temperature": 3137665600.016654,
+      "speed": 1157170016.7760947,
+      "jump_residual": 2.0977176251905713e-14,
+      "upstream_relative_error": 6.695709986459519e-09
+    },
+    {
+      "case": "co",
+      "fuel_density": 10000000.0,
+      "coulomb": false,
+      "ash_density": 16463775.412764505,
+      "ash_temperature": 5269551975.316024,
+      "speed": 1234048778.5317802,
+      "jump_residual": 7.69463172234358e-15,
+      "upstream_relative_error": 1.0772449599016909e-09
+    },
+    {
+      "case": "co",
+      "fuel_density": 10000000.0,
+      "coulomb": true,
+      "ash_density": 16476836.502322963,
+      "ash_temperature": 5281127511.960697,
+      "speed": 1232426405.6215527,
+      "jump_residual": 1.1234266783388502e-14,
+      "upstream_relative_error": 1.0254319615654595e-09
+    },
+    {
+      "case": "co",
+      "fuel_density": 300000000.0,
+      "coulomb": false,
+      "ash_density": 452426337.0324217,
+      "ash_temperature": 10930644226.940197,
+      "speed": 1433327389.5538704,
+      "jump_residual": 6.961809653548954e-15,
+      "upstream_relative_error": 3.983462226742063e-09
+    },
+    {
+      "case": "co",
+      "fuel_density": 300000000.0,
+      "coulomb": true,
+      "ash_density": 453049883.83102876,
+      "ash_temperature": 11032791873.450794,
+      "speed": 1429686754.1412668,
+      "jump_residual": 3.175562298110049e-15,
+      "upstream_relative_error": 3.878943388713196e-09
+    }
+  ]
+}

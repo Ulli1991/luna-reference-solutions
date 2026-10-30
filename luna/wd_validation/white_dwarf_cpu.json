@@ -1,0 +1,32 @@
+{
+  "jax": "0.4.38",
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "central_density": 10000000.0,
+  "temperature": 10000000.0,
+  "ambient_density": 0.0001,
+  "passed": true,
+  "runs": [
+    {
+      "cells": 64,
+      "surface_radius": 731665791.6597418,
+      "mass_solar": 0.7890682787392952,
+      "virial_relative_error": 0.0007317629426397904
+    },
+    {
+      "cells": 128,
+      "surface_radius": 731665790.5572716,
+      "mass_solar": 0.7890679510183005,
+      "virial_relative_error": 0.00018211839409040337
+    },
+    {
+      "cells": 256,
+      "surface_radius": 731665789.4283649,
+      "mass_solar": 0.7890679730610127,
+      "virial_relative_error": 4.526343343146043e-05
+    }
+  ],
+  "scope": "initial model virial balance; evolution stability is a separate gate"
+}

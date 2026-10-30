@@ -1,0 +1,17 @@
+{
+  "jax": "0.4.38",
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "cells": 128,
+  "dynamical_time": 1.9339691369495717,
+  "requested_dynamical_times": 2.0,
+  "method": "explicit discrete reference-residual balancing",
+  "passed": true,
+  "reference_held_bitwise": true,
+  "steps": 2310,
+  "duration": 3.8679382738991435,
+  "completed_dynamical_times": 2.0,
+  "energy_budget_error": 1.7361843261027194e-16,
+  "mass_weighted_density_change": 2.3552698233816306e-05,
+  "maximum_core_mach": 0.001338467209207914,
+  "maximum_momentum_change": 66832679552.456314
+}

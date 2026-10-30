@@ -1,0 +1,18 @@
+{
+  "input_report": "luna/wd_validation/helium_exhaustion_cpu.json",
+  "cases": [
+    {
+      "name": "helium_exhaustion",
+      "duration": 10.0,
+      "temperature": 3581121368.470946,
+      "helium": 0.04297230229954627,
+      "carbon_oxygen": 1.3284627227538312e-07,
+      "nickel": 0.9568083424991118,
+      "net_to_gross_reaction_flow": 0.02359223565978877,
+      "abundance_change_per_second": 0.004214938311318947,
+      "nuclear_heating": 3189701146226471.5,
+      "neutrino_cooling": 274278287684303.34,
+      "cooling_time": 45440.663585085706
+    }
+  ]
+}
