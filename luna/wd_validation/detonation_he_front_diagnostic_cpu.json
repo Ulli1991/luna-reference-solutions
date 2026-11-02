@@ -1,0 +1,36 @@
+{
+  "scope": "snapshot displacement diagnostic; not a replacement for time-history speed fits",
+  "report_sha256": "99812a1c1e6d4fba8f739de49515c51b92569468a521dd1757e53620fd6779ad",
+  "runs": [
+    {
+      "cells": 64,
+      "translation_speed_errors_by_gradient_window": {
+        "1": 0.08237333593754803,
+        "2": 0.10763017922429108,
+        "3": 0.11221691060462935,
+        "4": 0.11249572022255094,
+        "8": 0.09933609218501349
+      }
+    },
+    {
+      "cells": 128,
+      "translation_speed_errors_by_gradient_window": {
+        "1": 0.0324870551989056,
+        "2": 0.051188624074758104,
+        "3": 0.05658959362883609,
+        "4": 0.0571469047523927,
+        "8": 0.05715804295252824
+      }
+    },
+    {
+      "cells": 256,
+      "translation_speed_errors_by_gradient_window": {
+        "1": 0.015509124691418963,
+        "2": 0.022765630262542746,
+        "3": 0.024481941670152718,
+        "4": 0.02462620579766228,
+        "8": 0.024628261383285333
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "jax": "0.4.38",
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "density": 1000000.0,
+  "temperature": 1000000000.0,
+  "length": 10000000.0,
+  "amplitude": 1e-05,
+  "final_time": 0.006794249824926823,
+  "boundary": "periodic",
+  "order": 2,
+  "burning": false,
+  "runs": [
+    {
+      "cells": 32,
+      "steps": 22,
+      "density_l1_normalized": 0.00151893922520685,
+      "velocity_l1_normalized": 0.0009938878002895787,
+      "conservation_scaled_error": 1.5921723712800274e-16,
+      "species_sum_error": 0.0
+    },
+    {
+      "cells": 64,
+      "steps": 43,
+      "density_l1_normalized": 0.0002603714319775463,
+      "velocity_l1_normalized": 9.954925180629918e-05,
+      "conservation_scaled_error": 1.5921723712800279e-16,
+      "species_sum_error": 0.0
+    },
+    {
+      "cells": 128,
+      "steps": 86,
+      "density_l1_normalized": 5.151965087861754e-05,
+      "velocity_l1_normalized": 1.5748001222508998e-05,
+      "conservation_scaled_error": 1.3610560024085311e-18,
+      "species_sum_error": 0.0
+    }
+  ],
+  "passed": true
+}

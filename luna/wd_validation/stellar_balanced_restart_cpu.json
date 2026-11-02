@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "scope": "actual WD initialization and lossless reference/state/temperature restart; zero-time round trip",
+  "cells": 128,
+  "well_balanced": true,
+  "jax": "0.4.38"
+}

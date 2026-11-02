@@ -1,0 +1,58 @@
+{
+  "jax": "0.4.38",
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "solver": {
+    "method": "Radau",
+    "rtol": 1e-10,
+    "abundance_atol": 1e-15,
+    "energy_atol": 1000.0,
+    "escaped_energy_atol": 0.01,
+    "first_step": 1e-12
+  },
+  "benchmark": {
+    "source": "https://arxiv.org/pdf/astro-ph/0510367",
+    "table": 1,
+    "density": 1000000000.0,
+    "temperature": 1000000000.0,
+    "carbon": 0.5,
+    "oxygen": 0.5,
+    "endpoint_carbon": 0.05,
+    "ignition_time": 0.0596,
+    "printed_time_half_width": 5e-05
+  },
+  "cases": [
+    {
+      "name": "no_eos_coulomb",
+      "screening": "screen5",
+      "neutrinos": "sneut5",
+      "eos_coulomb": false,
+      "ignition_time": 0.0596257052904044,
+      "benchmark_ratio": 1.0004312968188658,
+      "final_time": 0.0596257052904044,
+      "final_temperature": 5787589293.820462,
+      "final_state": [
+        0.03136756668034904,
+        0.04999942607527202,
+        0.44396464535268626,
+        0.29094204665541296,
+        0.11808429444638306,
+        0.06296353571750751,
+        0.0025485799755156353,
+        0.00012653790103452138,
+        3.349752850343311e-06,
+        1.692385072462516e-08,
+        5.102170608333075e-10,
+        8.863365910394571e-12,
+        5.736234122335215e-14,
+        1.4493840718169702e+18,
+        8676939.745043993
+      ],
+      "energy_budget_error": 2.5689799931691436e-14,
+      "nfev": 24203,
+      "published_time_match": true
+    }
+  ]
+}

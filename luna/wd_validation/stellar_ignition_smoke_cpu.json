@@ -1,0 +1,68 @@
+{
+  "jax": "0.4.38",
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "passed": true,
+  "runs": [
+    {
+      "case": "white-dwarf-ignition",
+      "config": {
+        "case": "white-dwarf",
+        "cells": 32,
+        "length": 1280000000.0,
+        "density": 10000000.0,
+        "temperature": 10000000.0,
+        "hot_temperature": 3000000000.0,
+        "burn": true,
+        "geometry": "spherical",
+        "gravity": true,
+        "screening": "screen5",
+        "neutrinos": "none",
+        "cfl": 0.1,
+        "burn_rtol": 1e-07,
+        "ambient_density": 0.0001,
+        "well_balanced": true,
+        "ignition_radius": 120000000.0
+      },
+      "steps": 4,
+      "time": 4e-08,
+      "energy_budget_error": 1.1693834406211332e-16,
+      "mass_budget_error": 7.40695354205889e-18,
+      "burned_fuel_mass": 9.519638272166401e+27,
+      "maximum_velocity": 1258521.7143761683,
+      "maximum_temperature": 2840153579.51608,
+      "diagnostics": {
+        "rejected_steps": 0,
+        "burn_suppressed": 7,
+        "slope_reductions": 75,
+        "minimum_flux_fraction": 1.0,
+        "boundary_budget": [
+          -2.2204460492503123e-10,
+          0.0,
+          2.8724135677597544e-150,
+          -1.1102230246251562e-10,
+          -1.1102230246251562e-10,
+          1.4362067838798769e-149,
+          0.0,
+          4.83765900378117e-244,
+          4.344020329925947e-244,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -237833487.42166495
+        ],
+        "ignition_energy": 2.3459468057013083e+48,
+        "next_dt": 1.25e-08
+      },
+      "restart_bitwise_equal": true,
+      "thermal_gravity_budget_error": 8.56827026340096e-17,
+      "cold_reference_preserved": true
+    }
+  ],
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "scope": "hotspot/central-ignition smoke tests and short radial evolution; no detonation-speed, sustained propagation or explosion gate"
+}

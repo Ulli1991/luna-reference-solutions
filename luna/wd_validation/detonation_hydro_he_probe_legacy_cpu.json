@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "case": "he",
+  "jax": "0.4.38",
+  "scope": "overdriven ZND translation; not a self-sustaining detonation-speed test",
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "reference_sha256": "ffc35def4054428f64497a94545f52f0cef80381a7bb8fd6a9cf37327a6ce066",
+  "reference_speed": 1847916616.0241952,
+  "half_consumption_length": 1592054.4149617166,
+  "length": 63682176.59846866,
+  "duration": 0.003446160722093689,
+  "runs": [
+    {
+      "cells": 128,
+      "mass_budget_error": 6.133976896910793e-17,
+      "energy_binding_budget_error": 3.210028090109109e-15,
+      "steps": 110,
+      "retries": 0,
+      "burn_suppressed": 745,
+      "reference_trace_projection": 1.3322676295501878e-15,
+      "measured_speed": 1848064213.7210987,
+      "speed_relative_error": 7.987248754814935e-05,
+      "density_l1_normalized": 0.09251235077068735,
+      "fuel_l1_normalized": 0.08345005104048867,
+      "energy_l1_normalized": 0.056126667889080266
+    }
+  ],
+  "speed_gate_passed": true,
+  "refinement_checked": false,
+  "comparison_status": "superseded: smooth quadrature crossed the shock; speed/budget measurements retained, profile errors require split-jump integration"
+}

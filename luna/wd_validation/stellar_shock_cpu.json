@@ -1,0 +1,36 @@
+{
+  "jax": "0.4.38",
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "mach": 3.0,
+  "compression": 3.514352270853737,
+  "upstream_temperature": 100000000.0,
+  "downstream_temperature": 1300606245.8612227,
+  "hugoniot_residual": [
+    6.518774509889152e-15,
+    -5.961303393380161e-16
+  ],
+  "duration": 0.0024470219359371812,
+  "runs": [
+    {
+      "cells": 32,
+      "steps": 22,
+      "l1_scaled_error": 0.013295308254939776,
+      "conservation_scaled_error": 4.284638140489745e-17
+    },
+    {
+      "cells": 64,
+      "steps": 43,
+      "l1_scaled_error": 0.007213773156495135,
+      "conservation_scaled_error": 1.330317301050116e-16
+    },
+    {
+      "cells": 128,
+      "steps": 86,
+      "l1_scaled_error": 0.0036733433948754396,
+      "conservation_scaled_error": 1.9665701228135835e-16
+    }
+  ],
+  "passed": true
+}

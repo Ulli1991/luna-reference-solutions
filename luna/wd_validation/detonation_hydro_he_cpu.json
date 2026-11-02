@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "case": "he",
+  "jax": "0.4.38",
+  "scope": "overdriven ZND translation; not a self-sustaining detonation-speed test",
+  "table_sha256": "c9a57c26c6fd2b2b378b9d5295ca1214022f6fec6289d038b47bf8c8938881a1",
+  "reference_sha256": "ffc35def4054428f64497a94545f52f0cef80381a7bb8fd6a9cf37327a6ce066",
+  "reference_speed": 1847916616.0241952,
+  "half_consumption_length": 1592054.4149617166,
+  "length": 63682176.59846866,
+  "duration": 0.003446160722093689,
+  "runs": [
+    {
+      "cells": 64,
+      "mass_budget_error": 1.2267953793821587e-16,
+      "energy_binding_budget_error": 1.7603379848985437e-15,
+      "steps": 55,
+      "retries": 0,
+      "burn_suppressed": 361,
+      "reference_trace_projection": 1.3322676295501878e-15,
+      "measured_speed": 2008349498.5629926,
+      "speed_relative_error": 0.08681824772157176,
+      "density_l1_normalized": 0.15448883582612025,
+      "fuel_l1_normalized": 0.1045362369185093,
+      "energy_l1_normalized": 0.07895328646820374
+    },
+    {
+      "cells": 128,
+      "mass_budget_error": 6.133976896910793e-17,
+      "energy_binding_budget_error": 2.34021402698277e-15,
+      "steps": 110,
+      "retries": 0,
+      "burn_suppressed": 745,
+      "reference_trace_projection": 1.3322676295501878e-15,
+      "measured_speed": 1848064213.721095,
+      "speed_relative_error": 7.987248754615095e-05,
+      "density_l1_normalized": 0.10186109855664842,
+      "fuel_l1_normalized": 0.07367664790728491,
+      "energy_l1_normalized": 0.06438931232598602
+    },
+    {
+      "cells": 256,
+      "mass_budget_error": 6.133976896910793e-17,
+      "energy_binding_budget_error": 1.4911098225022959e-15,
+      "steps": 221,
+      "retries": 1,
+      "burn_suppressed": 1534,
+      "reference_trace_projection": 1.3322676295501878e-15,
+      "measured_speed": 1826457150.452938,
+      "speed_relative_error": 0.01161278890247075,
+      "density_l1_normalized": 0.04980777681468615,
+      "fuel_l1_normalized": 0.04419308085233879,
+      "energy_l1_normalized": 0.03132788556144769
+    }
+  ],
+  "refinement_checked": true
+}

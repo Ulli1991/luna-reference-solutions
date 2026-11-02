@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use these reference solutions, please cite them as below, and the codes and papers named per file in MANIFEST.json."
+title: "Reference solutions for the LUNA hydrodynamics test suite"
+abstract: >-
+  Reference solutions for the test suite of the LUNA astrophysical hydrodynamics code. The repository
+  collects what LUNA's tests are checked against, each file with its sha256, source code and version,
+  how it was produced, the LUNA tests that read it and its licence terms in MANIFEST.json. Provided
+  are: AthenaK runs from LUNA's initial conditions at high resolution (PPMX/RK4 and PLM), reduced to
+  the tests' metrics, for shock tubes (Shu-Osher, Titarev-Toro, Woodward-Colella), 2D Riemann problems
+  and the Liska-Wendroff implosion, Kelvin-Helmholtz (McNally et al. 2012), Rayleigh-Taylor and
+  Richtmyer-Meshkov instabilities, the Gresho vortex, sound and Jeans waves, an isothermal atmosphere,
+  Taylor-Green and the Evrard collapse; Arepo and mini-RAMSES runs of comoving expansion and top-hat
+  collapse, and Arepo white-dwarf models and one-zone nuclear burns; AMReX Microphysics outputs
+  (Helmholtz equation of state, aprox13 rates and right-hand side, screening, neutrino losses, helium
+  burning, Chapman-Jouguet detonations); pseudo-spectral Taylor-Green runs and published Brachet et
+  al. (1983) data; Pencil Code curves digitised from McNally et al. (2012); JAX-AMR parity outputs; a
+  subset of the Timmes-Swesty Helmholtz table; and LUNA's own high-resolution outputs, which serve as
+  regression references only.
+type: dataset
+authors:
+  - family-names: Steinwandel
+    given-names: Ulrich Philipp
+    affiliation: "Max Planck Institute for Astrophysics"
+license: CC-BY-4.0
+repository-code: "https://github.com/Ulli1991/luna-reference-solutions"
+url: "https://github.com/Ulli1991/luna-reference-solutions"
+keywords:
+  - hydrodynamics
+  - reference solutions
+  - verification
+  - astrophysics
+references:
+  - type: software
+    title: "LUNA: A performance-portable and differentiable hydrodynamics and collisionless N-body code for astrophysical fluid dynamics"
+    authors:
+      - family-names: Steinwandel
+        given-names: Ulrich Philipp
+    url: "https://github.com/Ulli1991/LUNA"
+    doi: 10.5281/zenodo.23874689

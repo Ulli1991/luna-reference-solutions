@@ -1,0 +1,70 @@
+{
+  "input_report": "luna/wd_validation/extended_burns_cpu.json",
+  "cases": [
+    {
+      "name": "dilute_helium",
+      "duration": 0.1,
+      "temperature": 2009479149.1157115,
+      "helium": 0.9658594050815995,
+      "carbon_oxygen": 0.0023665103308444647,
+      "nickel": 7.580785636295924e-09,
+      "net_to_gross_reaction_flow": 0.9999995760435719,
+      "abundance_change_per_second": 0.7999089589018495,
+      "nuclear_heating": 5.626739259554373e+17,
+      "neutrino_cooling": 7742092342571.544,
+      "cooling_time": 1334578.529384363
+    },
+    {
+      "name": "hot_helium",
+      "duration": 0.1,
+      "temperature": 3415522814.971037,
+      "helium": 0.3740432245797625,
+      "carbon_oxygen": 1.5472321894451005e-05,
+      "nickel": 0.6256780961621863,
+      "net_to_gross_reaction_flow": 0.9587710776062415,
+      "abundance_change_per_second": 3.0776885633512108,
+      "nuclear_heating": 2.3246722803993784e+18,
+      "neutrino_cooling": 174908592447460.12,
+      "cooling_time": 58182.063159364756
+    },
+    {
+      "name": "carbon_rich",
+      "duration": 0.1,
+      "temperature": 4620521032.945058,
+      "helium": 0.0049343567829195105,
+      "carbon_oxygen": 7.970617539145674e-05,
+      "nickel": 0.2823225960546746,
+      "net_to_gross_reaction_flow": 8.703954705983712e-06,
+      "abundance_change_per_second": 4.9974779813422,
+      "nuclear_heating": 3.825124554987126e+17,
+      "neutrino_cooling": 292702085908592.06,
+      "cooling_time": 10680.527469463595
+    },
+    {
+      "name": "oxygen_rich",
+      "duration": 0.01,
+      "temperature": 6389946547.109581,
+      "helium": 0.16135777723387218,
+      "carbon_oxygen": 4.093143029868356e-05,
+      "nickel": 0.5816067173943829,
+      "net_to_gross_reaction_flow": 2.3327257253581693e-07,
+      "abundance_change_per_second": 0.0005686189979280179,
+      "nuclear_heating": 316403454563046.6,
+      "neutrino_cooling": 485562949581212.3,
+      "cooling_time": 2591.821953952985
+    },
+    {
+      "name": "nickel_relaxation",
+      "duration": 0.01,
+      "temperature": 4925911254.362519,
+      "helium": 0.03240708161211165,
+      "carbon_oxygen": 6.597965571751777e-07,
+      "nickel": 0.8683010802546782,
+      "net_to_gross_reaction_flow": 1.4147853624625835e-08,
+      "abundance_change_per_second": 0.006822089095269181,
+      "nuclear_heating": -89651984153393.77,
+      "neutrino_cooling": 530457015905336.2,
+      "cooling_time": 7898.410213054972
+    }
+  ]
+}

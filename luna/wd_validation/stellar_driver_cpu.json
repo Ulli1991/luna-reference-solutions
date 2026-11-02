@@ -1,0 +1,115 @@
+{
+  "jax": "0.4.38",
+  "devices": [
+    "TFRT_CPU_0"
+  ],
+  "passed": true,
+  "runs": [
+    {
+      "case": "he",
+      "steps": 6,
+      "time": 1e-05,
+      "energy_budget_error": 8.933905615350358e-25,
+      "mass_budget_error": 7.275958302963201e-18,
+      "burned_fuel_mass": 85500065.55502477,
+      "maximum_velocity": 1498475.4268691351,
+      "maximum_temperature": 1980384470.80348,
+      "diagnostics": {
+        "rejected_steps": 0,
+        "burn_suppressed": 22,
+        "slope_reductions": 8,
+        "minimum_flux_fraction": 1.0,
+        "boundary_budget": [
+          6.887797744147906e-12,
+          1.405320745590055e+18,
+          9.00109571589978e-12,
+          2.1686630160594022e-15,
+          -2.5277167123893934e-18,
+          1.691873673995576e-19,
+          -2.036732292526457e-19,
+          -5.131848841546082e-20,
+          5.957367232658908e-21,
+          -1.3763880040178413e-23,
+          3.3071872606321455e-25,
+          3.56745039122355e-29,
+          -1.5115566093572544e-33,
+          -6.544342673725866e-39,
+          1.1490869023644349e-45,
+          1107600.3376771715
+        ]
+      },
+      "restart_bitwise_equal": true
+    },
+    {
+      "case": "co",
+      "steps": 14,
+      "time": 1e-05,
+      "energy_budget_error": 7.545999455666546e-25,
+      "mass_budget_error": 2.3283063727261632e-17,
+      "burned_fuel_mass": 3134892237991.8403,
+      "maximum_velocity": 2001326.600579675,
+      "maximum_temperature": 4127225622.1482964,
+      "diagnostics": {
+        "rejected_steps": 4,
+        "burn_suppressed": 22,
+        "slope_reductions": 12,
+        "minimum_flux_fraction": 1.0,
+        "boundary_budget": [
+          -6.381253279072511e-11,
+          2.0163941381625668e+19,
+          -1.3999509780270131e-14,
+          1.4971594158738397e-13,
+          -6.986490741646543e-11,
+          -7.061207173383879e-14,
+          -1.5424484350667304e-11,
+          2.970296809605533e-11,
+          4.3709012303017844e-12,
+          8.277107677002837e-13,
+          1.1452040310751266e-13,
+          -1.8263424921894274e-17,
+          -4.396693699153594e-18,
+          1.2979734514199858e-20,
+          -4.407412028982725e-23,
+          182186677.96237525
+        ]
+      }
+    },
+    {
+      "case": "white-dwarf",
+      "steps": 10,
+      "time": 0.001,
+      "energy_budget_error": 1.3313281229133438e-16,
+      "mass_budget_error": 2.5128895381758327e-18,
+      "burned_fuel_mass": 1971409522970356.0,
+      "maximum_velocity": 239312.24685661987,
+      "maximum_temperature": 12386650.099619983,
+      "diagnostics": {
+        "rejected_steps": 0,
+        "burn_suppressed": 0,
+        "slope_reductions": 20,
+        "minimum_flux_fraction": 1.0,
+        "boundary_budget": [
+          5277580923742620.0,
+          -4.139801716415276e+28,
+          0.0,
+          2638790461871310.0,
+          2638790461871310.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          4.898472512061649e+33
+        ]
+      },
+      "maximum_density_relative_change": 0.010397166297646754,
+      "equilibrium_validated": false
+    }
+  ],
+  "scope": "hotspot smoke tests and short radial evolution; no CJ-speed or equilibrium-duration gate"
+}
