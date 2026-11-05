@@ -40,6 +40,7 @@ Galilean, low Mach, well-balanced, la14379: **exact** (in LUNA's code); no exter
 |---|---|---|---|
 | Shu-Osher | **external** (AthenaK PPMX 16384, `athenak/shu_osher/`; van Leer vs AthenaK PLM matched); LUNA-self kept as regression | `athenak/shu_osher/` (PPMX 16384 + 8192, PPMX/PLM 256..2048) | nothing |
 | Titarev-Toro | **external** (AthenaK PPMX 65536, `athenak/titarev_toro/`; van Leer vs AthenaK PLM matched); LUNA-self kept as regression | `athenak/titarev_toro/` (PPMX 65536 + 32768, PPMX/PLM 1024..8192) | nothing |
+| Yee vortex | exact (the initial state; `tests/test_hydro_accuracy_yee.py`), with a periodic-image floor | none (`luna/yee_vortex/` is LUNA-self: per-limiter norms, 2D fields at 512^2, sound-wave control on the same settings; regression only, no test reads it) | AthenaK run from LUNA's ICs not done (PLM and PPMX, as for the Gresho vortex, `athenak/gresho_vortex/`); the exact solution stays the gate, AthenaK would be context |
 | Agertz blob / KH / RT mixing | regression only (self-bounded) | none | AthenaK blob runs exist raw (`luna_tests/blob/ak`, 203 GB, `.hst` histories); reduce the cloud-mass histories |
 | site pages (sod, sedov, kh, rm, rt, a10) | - | partly (`athenak/*` for rm, rt, a10, kh) | `luna_tests/site/ak/` (22 GB raw) not reduced |
 

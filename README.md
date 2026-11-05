@@ -36,7 +36,7 @@ LUNA repository, else `~/luna-reference-solutions`.
 | `pencil/` | McNally, Lyra & Passy (2012) Pencil Code curves, digitised from the paper's figures | external (published) |
 | `spectral/` | pseudo-spectral Taylor-Green runs (euler3d, the LUNA author's spectral code) | independent code |
 | `tables/` | input table subsets (Timmes-Swesty Helmholtz table, the nodes the references touch) | external table |
-| `luna/` | **LUNA's own high-resolution / frozen outputs: regression only, not external.** A pass against these says LUNA did not change, not that it is right | LUNA |
+| `luna/` | **LUNA's own high-resolution / frozen outputs: regression only, not external.** A pass against these says LUNA did not change, not that it is right (`luna/yee_vortex/README.md` for the Yee vortex data) | LUNA |
 
 ## Provenance and licences
 
@@ -49,7 +49,8 @@ take precedence. Notes that say `unknown` mark terms not yet established. Most n
 
 Data files are byte-identical to the originals (copied from LUNA `tests/data/` at 2763e7f, from
 `/ptmp/uli/jax-hydro/luna_tests/wd_research/`, `phase0/` and `a15_ext/lit/` on Raven, 2026-10-30); only
-`athenak/README.md` had its `tests/data/...` paths rewritten to this layout.
+`athenak/README.md` had its `tests/data/...` paths rewritten to this layout. `luna/yee_vortex/` was made here after v1.0, from runs of
+2026-11-05; its end states are FP64 runs stored as float32 (`luna/yee_vortex/README.md`).
 
 ## Changing a file
 
