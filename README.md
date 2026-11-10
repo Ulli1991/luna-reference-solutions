@@ -36,6 +36,7 @@ LUNA repository, else `~/luna-reference-solutions`.
 | `pencil/` | McNally, Lyra & Passy (2012) Pencil Code curves, digitised from the paper's figures | external (published) |
 | `spectral/` | pseudo-spectral Taylor-Green runs (euler3d, the LUNA author's spectral code) | independent code |
 | `tables/` | input table subsets (Timmes-Swesty Helmholtz table, the nodes the references touch) | external table |
+| `luna-cpp/` | luna-cpp's runs (the LUNA author's C++ moving-mesh hydro, github.com/Ulli1991/luna-cpp): a record for comparison, not a truth (`luna-cpp/super_tube/README.md`) | luna-cpp |
 | `luna/` | **LUNA's own high-resolution / frozen outputs: regression only, not external.** A pass against these says LUNA did not change, not that it is right (`luna/yee_vortex/README.md` for the Yee vortex data) | LUNA |
 
 ## Provenance and licences
