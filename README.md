@@ -30,7 +30,7 @@ LUNA repository, else `~/luna-reference-solutions`.
 | directory | what | external? |
 |---|---|---|
 | `athenak/` | AthenaK runs from LUNA's ICs, reduced with LUNA's test metrics (`athenak/README.md` has the full provenance) | external code |
-| `arepo/` | Arepo: A16 comoving cross-check (public Arepo); WD models A/A2 and the burn grid (Arepo2_WD branch) | external code |
+| `arepo/` | Arepo: A16 comoving cross-check (public Arepo); WD models A/A2 and the burn grid (Arepo2_WD branch); final states of luna-cpp's 30 1D problems on Arepo's 1D moving mesh, N = 256..16384 (developers' master e6227faf; `arepo/<problem>/arepo_<problem>_N<n>[_wide][_matched][_m].npz`, provenance per file) | external code |
 | `ramses/` | mini-ramses: A16 comoving cross-check | external code |
 | `microphysics/` | AMReX-Astro Microphysics 99b9b47 outputs (Helmholtz EOS, burns, CJ detonation, aprox13 RHS, screen5, sneut5, rates) | external code |
 | `pencil/` | McNally, Lyra & Passy (2012) Pencil Code curves, digitised from the paper's figures | external (published) |
