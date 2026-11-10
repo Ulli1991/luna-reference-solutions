@@ -19,7 +19,7 @@ WD_VER="Arepo branch Arepo2_WD def96e2ab9d59d3f37acea81f5829b4e45b7cec9 (npz key
 
 A1D_VER="Arepo (V. Springel), developers' repository git@bitbucket.org:volkerspringel/arepo.git, branch master, commit e6227fafc3eac20a0cab07222ae0de6e8118d12c (2026-11-02), unmodified, 1D Voronoi mesh (ONEDIMS); Config.sh, param.txt and run settings per file in the npz key 'provenance'"
 A1D_HOW="Raven CPU (gcc 14, OpenMPI 4, one core per run), luna-cpp's 30 1D problems (scripts/problems_1d.py ed316ef: states, box, gamma, t_end, exact cell averages on N uniform cells); examples/shocktube/shocktube_1d Config.sh with the problem's walls (REFLECTIVE_X=1/2, periodic) and GAMMA; 'matched' adds RIEMANN_HLLC, TREE_BASED_TIMESTEPS and CourantFac 0.4; 'wide': a padded periodic line instead of walls; final cells of the problem's box, rows sorted by x; L1 in luna-cpp scripts/ladder_1d.py's norm in keys l1_rho, l1_u, l1_p"
-A1D_LIC="Arepo is GPL-3.0 (public release); these outputs come from the developers' repository (not public): the LUNA author's own runs, outputs only; settle publication with the Arepo developers before making them public"
+A1D_LIC="CC-BY-4.0 for these outputs: the LUNA author's own runs, outputs only (no source code); Arepo itself is GPL-3.0 (Springel 2010; Weinberger, Springel and Pakmor 2020), run from the developers' repository (bitbucket volkerspringel/arepo, master e6227faf); cite Arepo"
 
 meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licence
   local p=$1 b; b=$(basename "$p")
