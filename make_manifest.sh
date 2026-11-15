@@ -17,6 +17,11 @@ MP_LIC="Microphysics is BSD-3-Clause; the underlying Timmes routines / rate fits
 WD_LIC="CC-BY-4.0: the LUNA author's own runs with the non-public Arepo2_WD branch, outputs only (no source code; its Config.sh and param.txt are not published); cite Arepo (Springel 2010) and the white-dwarf branch"
 WD_VER="Arepo branch Arepo2_WD def96e2ab9d59d3f37acea81f5829b4e45b7cec9 (npz key arepo_commit; configuration on request, npz key configuration_note)"
 
+
+LCPP_VER="luna-cpp branch hydro-once 1811898 (HLLC with fewer divisions), voronoi-cpp 6ead543; npz key 'provenance'"
+LCPP_HOW="luna-cpp final run states (npz keys 'run', 'provenance'); jobs and setup in luna-cpp docs/measurements.md, 'Faces once by the owner, R14 and cheaper fluxes'; Raven A100"
+LCPP_LIC="luna-cpp's own output (BSD-3-Clause, as luna-cpp)"
+
 meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licence
   local p=$1 b; b=$(basename "$p")
   case $p in
@@ -62,6 +67,7 @@ meta() {   # path -> code|version|produced_by|problem|used_by(;-separated)|licen
     luna/stellar/stellar_golden_v2.npz) echo "luna|LUNA f9d9173 (branch golden-fix on wd-explosion 53f2990)|regenerated on purpose by LUNA tests/test_stellar_golden.py __main__ through main.py, CPU-8 FP64 (Raven login node, 2026-10-30), after composition slopes became positivity-preserving (stellar_golden.npz from 07e1d08 encoded round-off-sign slope flattening; docs/STELLAR_1D.md)|stellar 1D main-path golden - regression only, not external|tests/test_stellar_golden.py (golden-fix)|$LUNA_LIC";;
     luna/stellar/*) echo "luna|LUNA 07e1d08|written by LUNA tests/test_stellar_golden.py __main__ (luna.stellar.run frozen output)|stellar runner golden - regression only, not external|tests/test_stellar_golden.py|$LUNA_LIC";;
     jaxamr/amr_parity_2d/parity_2d.npz) echo "jaxamr|JA4S/JAX-AMR e8bbcf0e69e2f4a8f7b3c1dc1f8094d9beb7d98b (2026-07-14); npz key 'provenance'|upstream src/jaxamr/amr.py interpolate_coarse_to_fine (l.289) and the restriction of interpolate_fine_to_coarse (l.303-305) on fixed inputs (default_rng(7)), jax 0.10.1 CPU FP64, Raven login node 2026-11-02|amr_geometry 2D prolong/restrict parity|tests/test_amr_geometry.py|JAX-AMR is MIT (Copyright (c) 2025 Haocheng Wen, Faxuan Luo; LUNA src/luna/amr/LICENSE-JAX-AMR); outputs of its code on LUNA's inputs";;
+    luna-cpp/*) echo "luna-cpp|$LCPP_VER|$LCPP_HOW|$(dirname "${p#luna-cpp/}") - luna-cpp regression only, not external|none in LUNA (luna-cpp docs/measurements.md)|$LCPP_LIC";;
     *) echo "NO PROVENANCE RULE for $p" >&2; exit 1;;
   esac
 }
