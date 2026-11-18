@@ -18,17 +18,18 @@ initial state is the exact cell average.
 ## Runs
 
 LUNA 60cf841 (main; uncommitted: `docs/history/CODE_NOTES.md` only), jax 0.10.1, MUSCL-Hancock, HLLC, MC (`LIMITER=1`), CFL 0.8,
-FP64, driven by luna-cpp `scripts/luna_1d_run.py`.
+FP64, driven by luna-cpp `scripts/luna_1d_run.py floor=1`. LUNA's positivity floors are on: `preserve_face_states=True`, the RAMSES
+floors with `hydro_smallr` = `hydro_smallc` = 1e-10, off by default in LUNA, with `allow_first_order_faces=True`.
 
-- `super_tube_v2_luna_1048576_t{0.1,4}.npz`: 2^20 cells, Pallas kernel, one A100 (SLURM 32521644, 5828783 steps to t = 4 in
-  3750 s). LUNA's one `BOUNDARY` cannot hold an open left and a reflecting right wall: the run is on [0, 80.5], 2^21 cells, the right
-  half the mirror image (rho, -v, P), both ends open; the left half is kept. Largest difference between the halves: 0.045 (t = 0.1)
-  and 1.04 (t = 4) in the conserved variables; per stage at most 2 % of rho in a cell, L1(rho) at most 1e-3. Stored as conservative
-  averages on 2^17 cells (`n_run`, `n_coarse`).
-- `super_tube_v2_luna_{4096,32768}_t0.1.npz`: CPU, XLA kernel, one thread. LUNA at 4096, 32768 and 2^19 does not reach t = 4: the
-  pressure turns negative in stage N, where the ambient gas drives a shock into the cold stream (x = 25.40 at t = 0.323 for 4096,
-  x = 25.37 at t = 0.326 for 32768), and the run goes NaN; no state is stored for those.
+- `super_tube_v2_luna_1048576_t{0.1,4}.npz`: 2^20 cells, Pallas kernel, one A100 (SLURM 32530222, 5828783 steps to t = 4 in
+  3695 s). The run without the floors (SLURM 32521644) is bit-identical. LUNA's one `BOUNDARY` cannot hold an open left and a
+  reflecting right wall: the run is on [0, 80.5], 2^21 cells, the right half the mirror image (rho, -v, P), both ends open; the left half
+  is kept. Largest difference between the halves: 0.044 (t = 0.1) and 1.04 (t = 4) in the conserved variables; per stage at most 2 % of
+  rho in a cell, L1(rho) at most 1e-3. Stored as conservative averages on 2^17 cells (`n_run`, `n_coarse`).
+- `super_tube_v2_luna_{4096,32768}_t{0.1,4}.npz`: CPU, XLA kernel, one thread; to t = 4 in 12953 and 106188 steps, the same as luna-cpp's
+  static runs, and equal to them to 7e-12 (4096) and L1(rho) 1.5e-3 (32768). Without the floors these two runs go NaN at t = 0.32
+  (a negative pressure in stage N, where the ambient gas drives a shock into the cold stream); at t = 0.1 they are bit-identical.
 - `super_v2_<stage>_luna_<cells>_t0.1.npz`: the new stages alone (M, L, SO, N, V) on their windows, open walls, at the spacing of the
-  tube at N = 4096, 8 and 64 times as many cells; CPU, one thread.
+  tube at N = 4096, 8 and 64 times as many cells; CPU, one thread (bit-identical without the floors).
 
 Keys: `rho`, `u`, `p`, plus problem, series, t, steps, wall time, reached, commit, scheme, mirror, backend.
