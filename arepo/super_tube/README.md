@@ -27,6 +27,18 @@ so the run is LUNA's construction: the line and its mirror image (rho, -v, P) on
 point past its time (t = 0.100006 at 4096), so the t = 0.1 state is a run of its own that ends at `TimeMax = 0.1`. Stored: the
 cells of [0, 33.2], edges at the midpoints of the generators.
 
+## Files and how far the runs got
+
+Stored: N = 4096 and 32768 at t = 0.1. No state at t = 2: the runs to t = 2 were stopped on the owner's decision.
+
+| run | reached | last step | why |
+|---|---|---|---|
+| Arepo, N = 4096 | t = 0.5262 after 177,905 steps (SLURM 32516205) | 4.8e-7 | stopped by the code: "infinity encountered" in `compute_interface_fluxes`, a NaN velocity of cell ID 6284 at x = 51.395, the mirror image of x = 15.005, in stage E's swept-up 1e-3 gas (mass 9.3e-6) |
+| Arepo, N = 32768 | t = 0.1601 after 196,334 steps (SLURM 32516563-64, about 25 h on one core) | 4.8e-7 | not slowed: one core (the 1D mesh takes one task) at about 2 steps per second against the step of the blast and the colliding streams; t = 2 needed roughly 4e6 more steps, weeks; cancelled |
+| GIZMO runs | see `gizmo/super_tube/README.md` | | |
+
+The comparison tables at t = 2 list these runs as "reached t = ..." without a score.
+
 ## Keys
 
 `x` (generator), `x_center`, `dx`, `rho`, `u`, `p`; `t`, `n_run`, `steps`, `wall_s`; `l1_<stage>`: L1 of (rho, v, P) per stage in

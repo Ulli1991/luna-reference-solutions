@@ -33,6 +33,20 @@ rarefaction from a free end moves at c = 1.18 and cannot reach x = 0 by t = 2. G
 used: its last particle sees a truncated kernel and starts at rho 0.60, P 60 instead of 1, 100. Stored: the particles of [0, 33.2];
 cell edges at the midpoints between particles (`x_center`, `dx`).
 
+## Files and how far the runs got
+
+Stored: MFM and MFV at N = 4096 and 32768, t = 0.1. No state at t = 2: the runs (one 72-core node, SLURM 32572866, 4.3 h,
+2026-11-19) were stopped on the owner's decision.
+
+| run | reached | last step | why |
+|---|---|---|---|
+| MFM, N = 4096 (8 ranks) | t = 0.9207, 854,364 steps | 6.0e-8 | the step fell from 9.5e-7 at t = 0.906 to 6e-8 at 0.913 and stayed there: about 1.8e7 more steps (some 90 h) to t = 2. The 519be7d MFM run fell at the same time, in stage E's swept-up 1e-3 gas (its particles at spacing 1e-3 h); for this run that place is inferred, not measured (no snapshot past t = 0.1) |
+| MFV, N = 4096 (8 ranks) | t = 0.9727, 840,720 steps | 2.4e-7 | slow, not stalled: about 4.3e6 more steps at 55 per second |
+| MFM, N = 32768 (32 ranks) | t = 0.1750, 168,981 steps | 2.4e-7 | about 10 steps per second; t = 2 needed weeks |
+| MFV, N = 32768 (24 ranks) | t = 0.1308, 158,398 steps | 4.8e-7 | likewise |
+
+The comparison tables at t = 2 list these runs as "reached t = ..." without a score.
+
 ## Keys
 
 `x` (particle), `x_center`, `dx`, `rho` (GIZMO's kernel density), `u`, `p` ((gamma - 1) rho u); `t`, `n_run`, `steps`, `wall_s`;
