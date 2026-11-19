@@ -21,6 +21,27 @@ Earlier runs of this tube with the `gizmo-cpp` branch (519be7d) are not kept: th
 t = 0.1 (and also fails to conserve on GIZMO's own Sod and Woodward-Colella problems), which the current branch does not (+0.09 of
 1148 by t = 0.1 at N = 4096).
 
+## The four maintained branches (t = 0.1)
+
+The files at the top of this directory are `gpu_kokkos_unified` 7fe8985. The subdirectories hold t = 0.1 at N = 4096 and 32768 on each
+of the four maintained branches at their heads of 2026-11-18, MFM and MFV, same configuration, parameters and walls:
+`starforge_dev/` (770ad72), `stella_dev/` (caf944d), `gku_stella_dev/` (b45666c), `gpu_kokkos_unified/` (b5f4503) on CPU, and
+`gpu_kokkos_unified_gpu/` (b5f4503, Kokkos CUDA on one A100, N = 4096 only). Builds: `gizmo/super_tube_v2/README.md`.
+
+L1 of rho / v / P over all stages:
+
+| branch | MFM 4096 | MFM 32768 | MFV 4096 | MFV 32768 |
+|---|---|---|---|---|
+| starforge_dev, stella_dev (identical) | 1.10 / 2.51 / 20.0 | 0.168 / 0.547 / 2.72 | 1.35 / 2.51 / 29.7 | 0.801 / 1.43 / 17.8 |
+| gku_stella_dev | 1.10 / 2.51 / 20.0 | 0.169 / 0.548 / 2.73 | 0.896 / 1.72 / 18.1 | 0.133 / 0.315 / 2.51 |
+| gpu_kokkos_unified b5f4503 | 1.10 / 2.51 / 20.0 | 0.169 / 0.548 / 2.73 | 0.888 / 1.73 / 18.1 | 0.129 / 0.316 / 2.52 |
+| gpu_kokkos_unified 7fe8985 (top level) | 1.10 / 2.51 / 20.0 | 0.168 / 0.548 / 2.72 | 0.894 / 1.71 / 18.0 | 0.134 / 0.315 / 2.51 |
+
+MFM agrees across the branches. MFV on the classic branches (starforge_dev, stella_dev) loses total energy, -21.6 (4096) and -22.6
+(32768) of 1148 by t = 0.1, with mass -8e-5 and -9e-6; the Kokkos branches keep energy within 0.4 and mass to 1e-12. The A100 run of
+gpu_kokkos_unified equals its CPU run in steps and to about 1e-10 relative in the state, and took 621 s (MFM) and 911 s (MFV) against
+423 s and 558 s on 2 CPU cores; luna-cpp on the same A100 (1305 MHz): 0.026 s static, 0.66 s moving.
+
 ## Initial conditions and walls
 
 N particles at the centres of N cells of width 33.2 / N (equal volume, as luna-cpp and LUNA), mass rho h, velocity and specific
