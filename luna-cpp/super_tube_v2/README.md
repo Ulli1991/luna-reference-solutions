@@ -1,9 +1,9 @@
 # Super-hard 1D tube v2: luna-cpp's runs
 
 luna-cpp's runs of its super-hard 1D tube v2 (`research_notes/super_tube_v2_2026-11-18.md`, branch super-tube-v2 df7f5ca; the definition
-is in `luna/super_tube_v2/README.md`). **Regression only, not external. Preliminary:** the moving mesh's runs to t = 4 (m0, N = 4096
-and 32768, SLURM 32522444 and 32522445) were running when these files went in. 32768 follows in a later commit; 4096 stalled in stage L
-at t = 0.809 (luna-cpp #30), and that state, not a final one, is not stored.
+is in `luna/super_tube_v2/README.md`). **Regression only, not external.** The moving mesh's runs to t = 4 (m0, N = 4096 and 32768,
+SLURM 32522444 and 32522445) both stalled in stage L, at t = 0.809 and t = 0.646 (luna-cpp #30). Those states are not final ones and are
+not stored.
 
 ## Runs
 
