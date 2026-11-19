@@ -38,7 +38,7 @@ LUNA repository, else `~/luna-reference-solutions`.
 | `spectral/` | pseudo-spectral Taylor-Green runs (euler3d, the LUNA author's spectral code) | independent code |
 | `tables/` | input table subsets (Timmes-Swesty Helmholtz table, the nodes the references touch) | external table |
 | `luna/` | **LUNA's own high-resolution / frozen outputs: regression only, not external.** A pass against these says LUNA did not change, not that it is right (`luna/yee_vortex/README.md` for the Yee vortex data) | LUNA |
-| `luna-cpp/` | luna-cpp (the Voronoi moving-mesh hydro) final states: Sedov 3D, vortex and sound waves 3D, KH 2D, the 1D ladder: regression only, not external | luna-cpp |
+| `luna-cpp/` | luna-cpp (the Voronoi moving-mesh hydro) final states: Sedov 3D, vortex and sound waves 3D, KH 2D, the 1D ladder, the super-hard 1D tube v2 (with its initial cells for other codes): regression only, not external | luna-cpp |
 
 ## Provenance and licences
 
