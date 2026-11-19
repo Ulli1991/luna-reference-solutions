@@ -31,7 +31,7 @@ LUNA repository, else `~/luna-reference-solutions`.
 |---|---|---|
 | `athenak/` | AthenaK runs from LUNA's ICs, reduced with LUNA's test metrics (`athenak/README.md` has the full provenance) | external code |
 | `arepo/` | Arepo: A16 comoving cross-check (public Arepo); WD models A/A2 and the burn grid (Arepo2_WD branch); luna-cpp's super-hard 1D tube (developers' master e6227faf, `arepo/super_tube/README.md`) | external code |
-| `gizmo/` | GIZMO (github.com/pfhopkins/gizmo 519be7d): luna-cpp's super-hard 1D tube with MFM and MFV (`gizmo/super_tube/README.md`) | external code |
+| `gizmo/` | GIZMO (github.com/pfhopkins/gizmo, gpu_kokkos_unified 7fe8985): luna-cpp's super-hard 1D tube with MFM and MFV (`gizmo/super_tube/README.md`) | external code |
 | `ramses/` | mini-ramses: A16 comoving cross-check | external code |
 | `microphysics/` | AMReX-Astro Microphysics 99b9b47 outputs (Helmholtz EOS, burns, CJ detonation, aprox13 RHS, screen5, sneut5, rates) | external code |
 | `pencil/` | McNally, Lyra & Passy (2012) Pencil Code curves, digitised from the paper's figures | external (published) |

@@ -45,6 +45,8 @@ Not matched: the Riemann solver (luna-cpp, LUNA, GIZMO: HLLC; Arepo: exact, its 
 MC at face centroids; LUNA: MC; Arepo and GIZMO: their own), the time integrator (luna-cpp and LUNA MUSCL-Hancock; Arepo its
 half-step prediction; GIZMO its drift-kick), mesh regularisation (luna-cpp: AREPO-ng's drift plus the generator velocity of
 #25 past 0.75 r; Arepo: its CM drift with the sound speed and the face-angle criterion; GIZMO MFM: none, Lagrangian; GIZMO MFV:
-its default mesh motion), the walls (Arepo and LUNA: the mirror image; GIZMO: its reflecting wall and an ambient pad for the
-open wall, with a mirror-image check at 4096), and the cell volume of GIZMO (kernel volume m / rho, not the midpoint width used
-for the norm).
+its default mesh motion), the open wall (luna-cpp, LUNA and Arepo: zero-gradient ghosts; GIZMO has none and gets 8.0 of ambient
+gas beyond x = 0 instead; the reflecting wall is luna-cpp's own, and the mirror plane of the line and its mirror image in LUNA,
+Arepo and GIZMO), the
+parallel layout (Arepo one core; GIZMO 8 to 32 MPI ranks; luna-cpp one A100; LUNA one core), and the cell volume of GIZMO (kernel
+volume m / rho, not the midpoint width used for the norm).
